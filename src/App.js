@@ -7,7 +7,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                {/* <Count /> */}
+                <Count />
+                <br />
                 <Douban />
             </div>
         )

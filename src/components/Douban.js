@@ -6,16 +6,19 @@ export default class Douban extends Component {
     render() {
         return (
             <div>
+                <button onClick={this.handleBtnClick}>点击加载数据</button>
                 <ul>
                     {this.props.store.state.list.map(item => {
-                        return <li>{item.title}</li>
+                        return <li key={item.title}>{item.title}</li>
                     })}
                 </ul>
             </div>
         )
     }
 
-    componentDidMount() {
-        this.props.store.fetchData()
+    handleBtnClick = () => {
+        if (this.props.store.state.list.length == 0) {
+            this.props.store.fetchData()
+        }
     }
 }
